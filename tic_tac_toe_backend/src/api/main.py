@@ -19,8 +19,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from typing import List, Dict, Any
 from dotenv import load_dotenv
-
-from tic_tac_toe_backend.src.api import schemas, crud, db
+from . import schemas, crud, db
 
 # Load env vars
 load_dotenv()

@@ -125,10 +125,10 @@ def make_move(db: Session, game_id: int, move: schemas.MoveCreate) -> models.Mov
 def _evaluate_board_status(board) -> str:
     """Return 'X_WON', 'O_WON', 'TIE', or 'ONGOING'."""
     lines = (
-        board +
-        [[board[r][c] for r in range(3)] for c in range(3)] +
-        [[board[i][i] for i in range(3)]] +
-        [[board[i][2 - i] for i in range(3)]]
+        board
+        + [[board[r][c] for r in range(3)] for c in range(3)]
+        + [[board[i][i] for i in range(3)]]
+        + [[board[i][2 - i] for i in range(3)]]
     )
     for line in lines:
         if line == ["X", "X", "X"]:
