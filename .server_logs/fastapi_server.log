@@ -49,6 +49,22 @@ Traceback (most recent call last):
   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
-  File "/home/kavia/workspace/code-generation/tictactoevault-115255-d3098ecb/tic_tac_toe_backend/src/api/main.py", line 19, in <module>
-    from sqlalchemy.orm import Session
-ModuleNotFoundError: No module named 'sqlalchemy'
+  File "/home/kavia/workspace/code-generation/tictactoevault-115255-d3098ecb/tic_tac_toe_backend/src/api/main.py", line 22, in <module>
+    from . import schemas, crud, db
+  File "/home/kavia/workspace/code-generation/tictactoevault-115255-d3098ecb/tic_tac_toe_backend/src/api/schemas.py", line 6, in <module>
+    from .models import GameStatus
+  File "/home/kavia/workspace/code-generation/tictactoevault-115255-d3098ecb/tic_tac_toe_backend/src/api/models.py", line 10, in <module>
+    from .db import Base
+  File "/home/kavia/workspace/code-generation/tictactoevault-115255-d3098ecb/tic_tac_toe_backend/src/api/db.py", line 17, in <module>
+    engine = create_engine(DB_URL, echo=False, future=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in create_engine
+  File "/home/kavia/workspace/code-generation/tictactoevault-115255-d3098ecb/tic_tac_toe_backend/venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tictactoevault-115255-d3098ecb/tic_tac_toe_backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 602, in create_engine
+    dbapi = dbapi_meth(**dbapi_args)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tictactoevault-115255-d3098ecb/tic_tac_toe_backend/venv/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 696, in import_dbapi
+    import psycopg2
+ModuleNotFoundError: No module named 'psycopg2'
